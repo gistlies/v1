@@ -732,7 +732,7 @@ do
                 Center = true,
                 Hidden = true,
                 ZIndex = 55,
-                Position = utilUtilityity:Position(0.5, 0, 0, 5, keybindslist_outline),
+                Position = Utility:Position(0.5, 0, 0, 5, keybindslist_outline),
                 Visible = window.keybindslist.visible
             })
             --
@@ -3868,7 +3868,7 @@ do
             end
         end
         --
-        window.pointers["configbox"] = configLoader
+        window.Pointers["configbox"] = configLoader
         section.currentAxis = section.currentAxis + 148 + 4
         section:Update()
         --
