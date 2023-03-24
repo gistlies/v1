@@ -44,7 +44,7 @@ local sections = {}
 -- Theme Variables
 --local themes = {}
 local Theme = {
-    accent = Color3.fromRGB(0, 200, 240),
+    accent = Color3.fromRGB(50, 100, 255),
     light_contrast = Color3.fromRGB(30, 30, 30),
     dark_contrast = Color3.fromRGB(20, 20, 20),
     outline = Color3.fromRGB(0, 0, 0),
@@ -1385,8 +1385,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        Utility:LoadImage(toggle__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
-        --
         function toggle:Get()
             return toggle.current
         end
@@ -1466,7 +1464,6 @@ do
                 Transparency = 0.5,
                 Visible = page.open
             }, section.visibleContent)
-            --
             --
             function colorpicker:Set(color, transp_val)
                 if typeof(color) == "table" then
@@ -2307,13 +2304,11 @@ do
                 Visible = page.open
             }, section.visibleContent)
             --
-            --Utility:LoadImage(button_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
-            --[[
             Library.Began[#Library.Began + 1] = function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 and button_outline.Visible and window.isVisible and Utility:MouseOverDrawing({section.section_frame.Position.X + (i == 2 and (section.section_frame.Size.X/2) or 0), section.section_frame.Position.Y + button.axis, section.section_frame.Position.X + section.section_frame.Size.X - (i == 1 and (section.section_frame.Size.X/2) or 0), section.section_frame.Position.Y + button.axis + 20}) and not window:IsOverContent() then
                     buttons[i][2]()
                 end
-            end]]
+            end
         end
         --
         section.currentAxis = section.currentAxis + 20 + 4
@@ -2387,9 +2382,6 @@ do
             Position = Utility:Position(1, -15, 0.5, -3, dropdown_frame),
             Visible = page.open
         }, section.visibleContent);dropdown["dropdown_image"] = dropdown_image
-        --
-        Utility:LoadImage(dropdown_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
-        Utility:LoadImage(dropdown__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
         --
         function dropdown:Update()
             if dropdown.open and dropdown.holder.inline then
@@ -2592,7 +2584,6 @@ do
         }, section.visibleContent);multibox["multibox_image"] = multibox_image
         --
         Utility:LoadImage(multibox_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
-        Utility:LoadImage(multibox__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
         --
         function multibox:Update()
             if multibox.open and multibox.holder.inline then
@@ -2974,8 +2965,6 @@ do
                         Visible = page.open
                     }, keybind.modemenu.drawings)
                     --
-                    Utility:LoadImage(keybind__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
-                    --
                     for i,v in pairs({"Always", "Toggle", "Hold"}) do
                         local button_title = Utility:Create("TextLabel", {Vector2.new(modemenu_frame.Size.X/2,15 * (i-1)), modemenu_frame}, {
                             Text = v,
@@ -3080,11 +3069,6 @@ do
             Position = Utility:Position(0, 4, 0, colorpicker.axis + (15/2) - (Utility:GetTextBounds(name, Theme.textsize, Theme.font).Y/2), section.section_frame),
             Visible = page.open
         }, section.visibleContent)
-        --
-        if transp then
-            Utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
-        end
-        Utility:LoadImage(colorpicker__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
         --
         function colorpicker:Set(color, transp_val)
             if typeof(color) == "table" then
@@ -3312,8 +3296,6 @@ do
                                 Color = Color3.fromHSV(0, 0, 1 - colorpicker.current[4]),
                             }, colorpicker.holder.drawings);colorpicker.holder.transparency_cursor[3] = colorpicker_open_transparency_cursor_color
                             --
-                            Utility:LoadImage(colorpicker_open_transparency_image, "transp", "https://i.imgur.com/ncssKbH.png")
-                            --
                         end
                         --
                         Utility:LoadImage(colorpicker_open_picker_image, "valsat", "https://i.imgur.com/wpDRqVH.png")
@@ -3457,11 +3439,6 @@ do
                 Transparency = 0.5,
                 Visible = page.open
             }, section.visibleContent)
-            --
-            if transp then
-                Utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
-            end
-            Utility:LoadImage(colorpicker__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
             --
             function colorpicker:Set(color, transp_val)
                 if typeof(color) == "table" then
