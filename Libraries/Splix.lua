@@ -2308,12 +2308,12 @@ do
             }, section.visibleContent)
             --
             --Utility:LoadImage(button_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
-            --
+            --[[
             Library.Began[#Library.Began + 1] = function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 and button_outline.Visible and window.isVisible and Utility:MouseOverDrawing({section.section_frame.Position.X + (i == 2 and (section.section_frame.Size.X/2) or 0), section.section_frame.Position.Y + button.axis, section.section_frame.Position.X + section.section_frame.Size.X - (i == 1 and (section.section_frame.Size.X/2) or 0), section.section_frame.Position.Y + button.axis + 20}) and not window:IsOverContent() then
                     buttons[i][2]()
                 end
-            end
+            end]]
         end
         --
         section.currentAxis = section.currentAxis + 20 + 4
