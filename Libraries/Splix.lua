@@ -1467,10 +1467,6 @@ do
                 Visible = page.open
             }, section.visibleContent)
             --
-            if transp then
-                Utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
-            end
-            Utility:LoadImage(colorpicker__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
             --
             function colorpicker:Set(color, transp_val)
                 if typeof(color) == "table" then
